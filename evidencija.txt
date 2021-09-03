@@ -1,2 +1,0 @@
-Prilikom promeni direktorijuma promeniti podatke i u
-httpd.config i .htaccess fajlu
