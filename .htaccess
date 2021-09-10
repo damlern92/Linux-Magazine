@@ -1,0 +1,27 @@
+# .htaccess
+<IfModule mod_rewrite.c>
+
+# Turn on the engine:
+RewriteEngine on
+
+# Set the base to this directory:
+#RewriteBase /color-blue/
+
+# Redirect certain paths to index.php:
+RewriteRule ^(about|home|videos)/?$ index.php?p=$1
+
+</IfModule>
+
+# SECOND PART:
+
+# Disable directory browsing:
+#Options All -Indexes
+
+# Prevent folder listing:
+#IndexIgnore *
+
+# Prevent access to any file:
+#<FilesMatch "^.*$">
+#Order Allow,Deny
+#Deny from all
+#</FilesMatch>

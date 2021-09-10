@@ -1,31 +1,22 @@
 <?php
-if (!isset($page_title)) $page_title = 'Default Page Title';?>
+if (!isset($page_title)) $page_title = 'Linux magazine';?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
   <title><?php echo $page_title; ?></title>
-  <link rel="stylesheet" type="text/css" href="style.css" title="style" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io//favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io//favicon-16x16.png">
+  <link rel="stylesheet" type="text/css" href="assets/header.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="assets/content.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="assets/footer.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="assets/additional_c.css" title="style" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io//favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
-
-  <style>
-      .wrapper_xml{
-      /*width:200px;*/
-      /*background:yellow;*/
-      /*height:600px;*/
-      /*border:1px solid black;*/
-      margin:2px;padding: 0 0 0 0;
-      /*display: inline-block;*/
-      /*vertical-align: top;*/
-      overflow:hidden;
-    }
-  </style>
 
   <div id="main">
     <div id="header">
@@ -54,11 +45,12 @@ if (!isset($page_title)) $page_title = 'Default Page Title';?>
 
 
           $vesti = $xmlDoc->getElementsByTagName("item");
-          foreach($vesti as $vest){ 
+          foreach($vesti as $vest){
+            // for($i=0;$i<=count($vesti);$i++){
               $title = $vest->getElementsByTagName("title")->item(0)->nodeValue;
               $link = $vest->getElementsByTagName("link")->item(0)->nodeValue;
               $description = $vest->getElementsByTagName("description")->item(0)->nodeValue;
-            // Prikazivanje xml podataka:
+            // Displaying xml data:
               echo "<div class='wrapper_xml'>";
                 echo "<h4>".$title ."</h4><br/>";
                 echo "<p>";
